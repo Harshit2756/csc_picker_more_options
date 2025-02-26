@@ -43,6 +43,7 @@ class DropdownWithSearch<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(label, style: labelStyle),
         SizedBox(height: 8),

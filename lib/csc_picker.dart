@@ -895,7 +895,8 @@ class CSCPickerState extends State<CSCPicker> {
       searchBarRadius: widget.searchBarRadius,
       disabledDecoration: widget.disabledDropdownDecoration,
       selected: _selectedState,
-      label: widget.stateSearchPlaceholder,
+      label: widget.stateDropdownLabel,
+      labelStyle: widget.labelStyle,
       //onChanged: (value) => _onSelectedState(value),
       onChanged: (value) {
         //print("stateChanged $value $_selectedState");
@@ -922,7 +923,8 @@ class CSCPickerState extends State<CSCPicker> {
       searchBarRadius: widget.searchBarRadius,
       disabledDecoration: widget.disabledDropdownDecoration,
       selected: _selectedCity,
-      label: widget.citySearchPlaceholder,
+      labelStyle: widget.labelStyle,
+      label: widget.cityDropdownLabel,
       //onChanged: (value) => _onSelectedCity(value),
       onChanged: (value) {
         //print("cityChanged $value $_selectedCity");
