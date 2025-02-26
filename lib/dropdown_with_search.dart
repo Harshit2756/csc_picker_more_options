@@ -7,6 +7,7 @@ class DropdownWithSearch<T> extends StatelessWidget {
   final List items;
   final EdgeInsets? selectedItemPadding;
   final TextStyle? selectedItemStyle;
+  final TextStyle? unselectedItemStyle;
   final TextStyle? dropdownHeadingStyle;
   final TextStyle? itemStyle;
   final TextStyle? labelStyle;
@@ -29,6 +30,7 @@ class DropdownWithSearch<T> extends StatelessWidget {
       required this.onChanged,
       this.selectedItemPadding,
       this.selectedItemStyle,
+      this.unselectedItemStyle, // Added this line
       this.dropdownHeadingStyle,
       this.itemStyle,
       this.labelStyle,
@@ -84,7 +86,12 @@ class DropdownWithSearch<T> extends StatelessWidget {
                       : BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(5)), color: Colors.grey.shade300, border: Border.all(color: Colors.grey.shade300, width: 1)),
               child: Row(
                 children: [
-                  Expanded(child: Text(selected.toString(), overflow: TextOverflow.ellipsis, style: selectedItemStyle != null ? selectedItemStyle : TextStyle(fontSize: 14))),
+                  Expanded(
+                      child: Text(
+                    selected.toString(),
+                    overflow: TextOverflow.ellipsis,
+                    style: selected == title ? unselectedItemStyle ?? selectedItemStyle ?? TextStyle(fontSize: 14) : selectedItemStyle ?? TextStyle(fontSize: 14),
+                  )),
                   Icon(Icons.keyboard_arrow_down_rounded)
                 ],
               ),

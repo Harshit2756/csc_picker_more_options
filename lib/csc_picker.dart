@@ -526,6 +526,7 @@ class CSCPicker extends StatefulWidget {
     this.onStateChanged,
     this.onCityChanged,
     this.selectedItemStyle,
+    this.unselectedItemStyle,
     this.dropdownHeadingStyle,
     this.dropdownItemStyle,
     this.labelStyle,
@@ -563,7 +564,7 @@ class CSCPicker extends StatefulWidget {
   final bool disableCountry;
 
   ///Parameters to change style of CSC Picker
-  final TextStyle? selectedItemStyle, dropdownHeadingStyle, dropdownItemStyle, labelStyle;
+  final TextStyle? selectedItemStyle, unselectedItemStyle, dropdownHeadingStyle, dropdownItemStyle, labelStyle;
   final BoxDecoration? dropdownDecoration, disabledDropdownDecoration;
   final bool showStates, showCities;
   final CountryFlag flagState;
@@ -852,6 +853,7 @@ class CSCPickerState extends State<CSCPicker> {
       title: widget.countryDropdownLabel,
       placeHolder: widget.countrySearchPlaceholder,
       selectedItemStyle: widget.selectedItemStyle,
+      unselectedItemStyle: widget.unselectedItemStyle, // Added this line
       dropdownHeadingStyle: widget.dropdownHeadingStyle,
       selectedItemPadding: widget.selectedItemPadding,
       itemStyle: widget.dropdownItemStyle,
@@ -887,6 +889,7 @@ class CSCPickerState extends State<CSCPicker> {
         return dropDownStringItem;
       }).toList(),
       selectedItemStyle: widget.selectedItemStyle,
+      unselectedItemStyle: widget.unselectedItemStyle, // Added this line
       dropdownHeadingStyle: widget.dropdownHeadingStyle,
       itemStyle: widget.dropdownItemStyle,
       decoration: widget.dropdownDecoration,
@@ -915,6 +918,7 @@ class CSCPickerState extends State<CSCPicker> {
         return dropDownStringItem;
       }).toList(),
       selectedItemStyle: widget.selectedItemStyle,
+      unselectedItemStyle: widget.unselectedItemStyle,
       dropdownHeadingStyle: widget.dropdownHeadingStyle,
       itemStyle: widget.dropdownItemStyle,
       selectedItemPadding: widget.selectedItemPadding,
