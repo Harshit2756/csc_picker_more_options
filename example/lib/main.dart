@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -62,18 +62,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   flagState: CountryFlag.DISABLE,
 
                   ///Dropdown box decoration to style your dropdown selector [OPTIONAL PARAMETER] (USE with disabledDropdownDecoration)
-                  dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Colors.white,
-                      border:
-                          Border.all(color: Colors.grey.shade300, width: 1)),
+                  dropdownDecoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: Colors.white, border: Border.all(color: Colors.grey.shade300, width: 1)),
 
                   ///Disabled Dropdown box decoration to style your dropdown selector [OPTIONAL PARAMETER]  (USE with disabled dropdownDecoration)
-                  disabledDropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Colors.grey.shade300,
-                      border:
-                          Border.all(color: Colors.grey.shade300, width: 1)),
+                  disabledDropdownDecoration:
+                      BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: Colors.grey.shade300, border: Border.all(color: Colors.grey.shade300, width: 1)),
 
                   ///placeholders for dropdown search field
                   countrySearchPlaceholder: "Country",
@@ -89,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ///defaultCountry: CscCountry.India,
 
                   ///Country Filter [OPTIONAL PARAMETER]
-                  countryFilter: [CscCountry.India,CscCountry.United_States,CscCountry.Canada],
+                  countryFilter: [CscCountry.India, CscCountry.United_States, CscCountry.Canada],
 
                   ///Disable country dropdown (Note: use it with default country)
                   //disableCountry: true,
@@ -101,10 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
 
                   ///DropdownDialog Heading style [OPTIONAL PARAMETER]
-                  dropdownHeadingStyle: TextStyle(
-                      color: Colors.black,
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold),
+                  dropdownHeadingStyle: TextStyle(color: Colors.black, fontSize: 17, fontWeight: FontWeight.bold),
 
                   ///DropdownDialog Item style [OPTIONAL PARAMETER]
                   dropdownItemStyle: TextStyle(
@@ -130,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onStateChanged: (value) {
                     setState(() {
                       ///store value in state variable
-                      stateValue = value;
+                      stateValue = value ?? "";
                     });
                   },
 
@@ -138,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onCityChanged: (value) {
                     setState(() {
                       ///store value in city variable
-                      cityValue = value;
+                      cityValue = value ?? "";
                     });
                   },
 
